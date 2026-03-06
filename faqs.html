@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | NEXA Advisory & Consulting Nepal</title>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1C2D;
+      --navy-light: #132c45;
+      --navy-dark: #081421;
+      --navy-lighter: #1a3a5a;
+      --gold: #C9A14A;
+      --gold-light: #D4B56A;
+      --gold-dark: #B08C3A;
+      --gold-transparent: rgba(201, 161, 74, 0.1);
+      --card: #132c45;
+      --card-hover: #1a3a5a;
+      --line: #1f3b5a;
+      --text: #dcdcdc;
+      --text-light: #f0f0f0;
+      --success: #2ecc71;
+      --warning: #f39c12;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.5);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background: var(--navy);
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+      font-weight: 400;
+    }
+
+    /* NAVBAR (exact same as index) */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(11, 28, 45, 0.97);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 8%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(201, 161, 74, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      object-fit: contain;
+      border: 1px solid var(--gold);
+    }
+
+    .logo-text h2 {
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    .logo-text span {
+      color: white;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: var(--transition);
+    }
+
+    .nav-links a:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover:before {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--gold);
+    }
+    
+    .nav-links a.active:before {
+      width: 100%;
+    }
+
+    .nav-contact {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-contact a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border: 1px solid var(--gold);
+      border-radius: 25px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .nav-contact a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--gold);
+      transition: var(--transition);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 140px 10% 80px;
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy-light));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, rgba(201,161,74,0.12) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .page-header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .breadcrumb a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--gold-light);
+    }
+
+    /* SECTION STYLES */
+    section {
+      padding: 80px 10%;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    .section-separator {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0;
+      opacity: 0.3;
+    }
+
+    /* CATEGORY FILTER */
+    .faq-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 50px;
+    }
+
+    .category-btn {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category-btn i {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .category-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .category-btn.active {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .category-btn.active i {
+      color: var(--navy);
+    }
+
+    /* FAQ ACCORDION */
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-category-section {
+      margin-bottom: 40px;
+      scroll-margin-top: 100px;
+    }
+
+    .faq-category-title {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--gold);
+    }
+
+    .faq-question {
+      padding: 22px 25px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      background: var(--card);
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: var(--card-hover);
+    }
+
+    .faq-question i {
+      color: var(--gold);
+      transition: transform 0.4s ease;
+      font-size: 1.2rem;
+    }
+
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 25px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      background: var(--navy-light);
+      border-top: 1px solid transparent;
+    }
+
+    .faq-answer.active {
+      padding: 25px;
+      max-height: 500px;
+      border-top-color: var(--gold);
+    }
+
+    .faq-answer p {
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer ul, .faq-answer ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .faq-answer li {
+      margin-bottom: 8px;
+    }
+
+    .faq-answer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+
+    /* HIGHLIGHTED FAQ */
+    .highlighted-faq {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy));
+      border-radius: var(--border-radius);
+      padding: 40px;
+      margin-top: 50px;
+      border: 1px solid var(--gold);
+      text-align: center;
+    }
+
+    .highlighted-faq h3 {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .highlighted-faq p {
+      color: var(--text-light);
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 2px solid var(--gold);
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(201, 161, 74, 0.4);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* ASK QUESTION SECTION */
+    .ask-question-section {
+      background: var(--card);
+      border-radius: var(--border-radius);
+      padding: 50px;
+      margin: 60px 0;
+      border: 1px solid var(--line);
+    }
+
+    .ask-question-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .ask-question-content h3 {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .ask-question-content p {
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .contact-methods-small {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contact-method-small {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 16px;
+      background: var(--navy-light);
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      transition: var(--transition);
+    }
+
+    .contact-method-small:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .contact-method-small i {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .ask-form {
+      background: var(--navy-light);
+      padding: 30px;
+      border-radius: var(--border-radius);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--navy);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: white;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(201,161,74,0.2);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(201,161,74,0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-dark);
+      padding: 50px 10% 20px;
+      margin-top: 0;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h4 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+      transform: translateX(5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--gold);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 18px;
+    }
+
+    .footer-social a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+
+    .footer-legal {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .footer-legal a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 12px;
+    }
+
+    .footer-legal a:hover {
+      color: var(--gold);
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--gold-light);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      section { padding: 60px 5%; }
+      .page-header { padding: 120px 5% 60px; }
+      .ask-question-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        display: none;
+        border-bottom: 1px solid var(--line);
+        z-index: 999;
+      }
+      .nav-links.active { display: flex; }
+      .nav-contact { display: none; }
+      .page-header h1 { font-size: 2.5rem; }
+      .faq-category-title { font-size: 1.5rem; }
+      .category-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="index.html" class="logo">
+      <img src="https://i.ibb.co/ksSqQwHs/NEXA-3.png" alt="NEXA Advisory & Consulting Logo" class="logo-img">
+      <div class="logo-text">
+        <h2>NEXA</h2>
+        <span>ADVISORY & CONSULTING</span>
+      </div>
+    </a>
+    
+    <div class="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="industries.html">Industries</a>
+      <a href="process.html">Process</a>
+      <a href="why.html">Why Us</a>
+      <a href="faq.html" class="active">FAQs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
+    <div class="nav-contact">
+      <a href="tel:+9779768553322">
+        <i class="fas fa-phone"></i> +977-976-8553322
+      </a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="color: var(--gold); font-size: 12px;"></i> <span>FAQs</span>
+    </div>
+    <div class="page-header-content">
+      <h1>Frequently Asked Questions</h1>
+      <p>Find answers to common questions about our services, pricing, process, and more.</p>
+    </div>
+  </div>
+
+  <div class="section-separator"></div>
+
+  <!-- FAQ SECTION -->
+  <section>
+    <!-- Category Filter -->
+    <div class="faq-categories">
+      <button class="category-btn active" data-category="all"><i class="fas fa-globe"></i> All Questions</button>
+      <button class="category-btn" data-category="general"><i class="fas fa-info-circle"></i> General</button>
+      <button class="category-btn" data-category="services"><i class="fas fa-briefcase"></i> Services</button>
+      <button class="category-btn" data-category="pricing"><i class="fas fa-tag"></i> Pricing & Payment</button>
+      <button class="category-btn" data-category="process"><i class="fas fa-cogs"></i> Process</button>
+      <button class="category-btn" data-category="compliance"><i class="fas fa-shield-alt"></i> Compliance & Legal</button>
+    </div>
+
+    <!-- FAQ Accordion Container -->
+    <div class="faq-container" id="faqContainer">
+      <!-- GENERAL CATEGORY -->
+      <div class="faq-category-section" data-category="general">
+        <h2 class="faq-category-title"><i class="fas fa-info-circle"></i> General Questions</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is NEXA Advisory & Consulting?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>NEXA Advisory & Consulting is a premier financial services firm based in Kathmandu, Nepal. We provide comprehensive accounting, tax, compliance, and advisory solutions to startups, SMEs, professionals, and established enterprises. Our team includes Chartered Accountants, CPAs, and MBAs with deep expertise in Nepali financial regulations and global best practices.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Where are you located? Do you serve clients outside Kathmandu?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our headquarters is in Kathmandu, but we serve clients across Nepal through virtual meetings, secure document portals, and occasional onsite visits. We have successfully worked with clients in Pokhara, Biratnagar, Butwal, and even internationally for NRIs and foreign investors.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What makes NEXA different from other accounting firms?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Five key differences set us apart:</p>
+            <ul>
+              <li><strong>Strategic Partnership:</strong> We don't just crunch numbers; we provide actionable insights to help you grow.</li>
+              <li><strong>Technology-Driven:</strong> We use modern tools for efficiency and real-time reporting.</li>
+              <li><strong>Transparent Pricing:</strong> No hidden fees, clear proposals, and flexible engagement models.</li>
+              <li><strong>Qualified Team:</strong> CAs, CPAs, and MBAs with industry experience.</li>
+              <li><strong>Guaranteed Deadlines:</strong> We never miss compliance deadlines – guaranteed.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is NEXA registered and recognized by professional bodies?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, our firm and team members are affiliated with the Institute of Chartered Accountants of Nepal (ICAN), Institute of Chartered Accountants of India (ICAI), and CPA Australia. We adhere to the highest professional and ethical standards mandated by these bodies.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES CATEGORY -->
+      <div class="faq-category-section" data-category="services">
+        <h2 class="faq-category-title"><i class="fas fa-briefcase"></i> Services & Offerings</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What specific services does NEXA offer?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer a comprehensive range of financial services:</p>
+            <ul>
+              <li><strong>Accounting & Bookkeeping:</strong> Monthly books, financial statements, MIS reports, Tally support</li>
+              <li><strong>Tax Filing & Compliance:</strong> VAT, income tax, TDS filing, tax planning, notice representation</li>
+              <li><strong>Company Registration:</strong> Private Limited, partnership, PAN/VAT registration, MOA/AOA drafting</li>
+              <li><strong>Financial Advisory:</strong> Budgeting, forecasting, investment analysis, business valuation</li>
+              <li><strong>Virtual CFO Services:</strong> Strategic planning, cash flow management, fundraising support</li>
+              <li><strong>Payroll Management:</strong> Salary processing, TDS, PF/ESI compliance</li>
+              <li><strong>Training & Development:</strong> Excel, financial modeling, accounting software training</li>
+              <li><strong>Startup Advisory:</strong> Pitch decks, financial modeling, investor connect</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer industry-specific services?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely. We have tailored solutions for manufacturing, retail & e-commerce, tourism & hospitality, IT & technology, construction & real estate, healthcare, education, transportation, and professional services. Each industry has unique financial requirements, and our team understands the nuances of your sector.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is Virtual CFO service? Who needs it?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Virtual CFO service provides strategic financial leadership on a part-time, remote basis. It's ideal for growing businesses that need high-level financial expertise but aren't ready for a full-time CFO. Services include financial strategy, cash flow management, fundraising support, board reporting, and investor relations. Many SMEs and funded startups benefit from this service.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you help with business registration and licensing?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we handle end-to-end company registration including Private Limited, partnership firms, PAN/VAT registration, and industry-specific licenses (e.g., tourism, import/export, health). We ensure all paperwork is correctly filed so you can focus on launching your business.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING & PAYMENT CATEGORY -->
+      <div class="faq-category-section" data-category="pricing">
+        <h2 class="faq-category-title"><i class="fas fa-tag"></i> Pricing & Payment</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you charge for your services?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer flexible pricing models based on your needs:</p>
+            <ul>
+              <li><strong>Monthly Retainer:</strong> Fixed monthly fee for ongoing services (accounting, tax filing, payroll).</li>
+              <li><strong>Project-Based:</strong> One-time fee for specific projects (company registration, business valuation, training).</li>
+              <li><strong>Hourly Consulting:</strong> For advisory projects with variable scope.</li>
+              <li><strong>Custom Packages:</strong> We can create a bundled package combining multiple services.</li>
+            </ul>
+            <p>All pricing is discussed upfront with a detailed proposal – no hidden fees.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you require long-term contracts?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>No, we don't lock clients into long-term contracts. Our monthly retainer services can be cancelled with 30 days' notice. For project work, payment is tied to project milestones. We believe in earning your business every month through quality service.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What payment methods do you accept?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We accept bank transfers, cheques, and digital payments (eSewa, Khalti, ConnectIPS) for your convenience. For international clients, we accept wire transfers in major currencies.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are there any setup fees or hidden costs?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We believe in complete transparency. Our proposals clearly outline all costs – including any one-time setup fees (if applicable) and monthly charges. There are no hidden costs. We'll also inform you in advance if any government fees (registration, filing) are applicable.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCESS CATEGORY -->
+      <div class="faq-category-section" data-category="process">
+        <h2 class="faq-category-title"><i class="fas fa-cogs"></i> Process & Onboarding</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I get started with NEXA?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Getting started is simple:</p>
+            <ol>
+              <li><strong>Free Consultation:</strong> Schedule a call or meeting to discuss your needs.</li>
+              <li><strong>Proposal:</strong> We'll provide a detailed proposal with scope, timeline, and pricing.</li>
+              <li><strong>Onboarding:</strong> After your approval, we'll send an engagement letter and request initial documents.</li>
+              <li><strong>Kick-off:</strong> We'll set up systems, introduce your dedicated team, and begin work.</li>
+            </ol>
+            <p>Most clients are onboarded within 3-5 business days.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What documents do you need from me to start?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>The document list varies by service, but generally includes:</p>
+            <ul>
+              <li>Company registration certificate (if registered)</li>
+              <li>PAN/VAT certificates</li>
+              <li>Last 12 months bank statements</li>
+              <li>Previous tax returns (if any)</li>
+              <li>List of directors/partners with KYC documents</li>
+              <li>Any existing accounting data or software access</li>
+            </ul>
+            <p>We provide a comprehensive checklist during onboarding.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do we communicate and share documents securely?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We use multiple secure channels:</p>
+            <ul>
+              <li><strong>Encrypted Portal:</strong> For uploading and downloading sensitive documents.</li>
+              <li><strong>WhatsApp/Viber/Telegram:</strong> For quick updates and queries.</li>
+              <li><strong>Email:</strong> For formal communications.</li>
+              <li><strong>Video Calls:</strong> Zoom/Google Meet for regular reviews.</li>
+              <li><strong>Phone:</strong> For urgent matters.</li>
+            </ul>
+            <p>All data is encrypted and stored securely in compliance with privacy regulations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How often will we meet or communicate?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>During the first month (onboarding), we may communicate weekly. After that, we schedule monthly review meetings to discuss financials, compliance updates, and strategic matters. However, you can reach out anytime via phone or WhatsApp for urgent queries – we're available 24/7 for our clients.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLIANCE & LEGAL CATEGORY -->
+      <div class="faq-category-section" data-category="compliance">
+        <h2 class="faq-category-title"><i class="fas fa-shield-alt"></i> Compliance & Legal</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you ensure compliance with Nepali tax laws?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our team includes experienced tax professionals who stay updated on all changes from the Inland Revenue Department (IRD). We use a compliance calendar to track all deadlines, conduct regular internal reviews, and provide proactive advice to ensure you're always compliant. We also represent you before tax authorities if any notices are received.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if I miss a tax deadline while working with NEXA?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>If we are responsible for missing a deadline (e.g., delayed filing), we will cover any late fees or penalties incurred. This is our guarantee. However, we require that you provide necessary documents and information to us in a timely manner as per our agreed schedule.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is my financial data safe with NEXA?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely. Data security is our top priority. We implement:</p>
+            <ul>
+              <li>Encrypted document portals for all file transfers</li>
+              <li>Two-factor authentication on all systems</li>
+              <li>Strict access controls – only your dedicated team can access your data</li>
+              <li>Confidentiality agreements signed by all team members</li>
+              <li>Regular security audits and backups</li>
+            </ul>
+            <p>We never share your data with third parties without your explicit consent.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can NEXA represent me before tax authorities if I receive a notice?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we provide full representation before the Inland Revenue Department (IRD) and other government authorities for all compliance matters handled by us. If you receive any notice, we will review it, prepare the response, and represent you if required. This service is included in our ongoing compliance packages.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What records do I need to maintain for tax purposes?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Under Nepali tax laws, you need to maintain:</p>
+            <ul>
+              <li>Books of accounts (cash book, ledger, journal)</li>
+              <li>Purchase and sales invoices/bills</li>
+              <li>Bank statements and deposit slips</li>
+              <li>Expense vouchers and supporting documents</li>
+              <li>Contracts and agreements</li>
+              <li>Fixed asset register</li>
+              <li>Payroll records</li>
+            </ul>
+            <p>If we handle your accounting, we'll maintain all these records for you and provide access anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGHLIGHTED FAQ -->
+    <div class="highlighted-faq">
+      <h3>Still have questions?</h3>
+      <p>Can't find what you're looking for? We're here to help. Reach out to us directly.</p>
+      <div>
+        <a href="contact.html" class="btn"><i class="fas fa-calendar-check"></i> Contact us</a>
+        <a href="tel:+9779768553322" class="btn btn-secondary"><i class="fas fa-phone"></i> Call now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-separator"></div>
+
+  <!-- ASK A QUESTION SECTION -->
+  <section class="ask-question-section">
+    <div class="ask-question-grid">
+      <div class="ask-question-content">
+        <h3>Ask Your Question</h3>
+        <p>Have a specific question not covered in our FAQs? Send it to us directly, and we'll get back to you within 24 hours.</p>
+        
+        <div class="contact-methods-small">
+          <a href="mailto:nexaadvisoryconsulting@gmail.com" class="contact-method-small"><i class="fas fa-envelope"></i> Email us</a>
+          <a href="https://wa.me/9779768553322" class="contact-method-small"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="tel:+9779768553322" class="contact-method-small"><i class="fas fa-phone"></i> Call</a>
+          <a href="https://t.me/9768553322" class="contact-method-small"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+        
+        <p style="margin-top: 20px; color: var(--text);">You can also call us directly at <strong style="color: var(--gold);">+977-976-8553322</strong> for immediate assistance.</p>
+      </div>
+      
+      <div class="ask-form">
+        <form id="questionForm">
+          <div class="form-group">
+            <input type="text" id="askName" placeholder="Your Name *" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="askEmail" placeholder="Your Email *" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="askSubject" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea id="askQuestion" placeholder="Your Question *" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Question</button>
+        </form>
+        <p style="color: var(--text); font-size: 0.85rem; margin-top: 15px; text-align: center;">We'll respond within 24 hours</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-separator"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>NEXA Advisory & Consulting</h4>
+        <p>Your trusted partner for financial excellence in Nepal. We provide comprehensive accounting, tax, and advisory services.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a href="industries.html"><i class="fas fa-chevron-right"></i> Industries</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html"><i class="fas fa-check"></i> Accounting & Bookkeeping</a></li>
+          <li><a href="services.html"><i class="fas fa-check"></i> Tax Filing & Compliance</a></li>
+          <li><a href="services.html"><i class="fas fa-check"></i> Company Registration</a></li>
+          <li><a href="services.html"><i class="fas fa-check"></i> Financial Advisory</a></li>
+          <li><a href="services.html"><i class="fas fa-check"></i> Virtual CFO Services</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Contact Info</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+9779768553322"><i class="fas fa-phone"></i> +977-976-8553322</a></li>
+          <li><a href="mailto:nexaadvisoryconsulting@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></li>
+          <li><a href="https://wa.me/9779768553322" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="https://t.me/9768553322" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-social">
+      <a href="https://www.facebook.com/nexaadvisoryandconsulting" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/nexa-advisory-and-consulting/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/nexaadvisoryandconsulting/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/9779768553322" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 NEXA Advisory & Consulting. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+      this.querySelector('i').classList.toggle('fa-bars');
+      this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+        document.querySelector('.mobile-menu i').classList.remove('fa-times');
+        document.querySelector('.mobile-menu i').classList.add('fa-bars');
+      });
+    });
+
+    // Back to top visibility
+    window.addEventListener('scroll', function() {
+      const backToTop = document.getElementById('backToTop');
+      if(window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // Smooth scroll for back to top
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        // Close other open FAQs (optional)
+        const currentAnswer = this.nextElementSibling;
+        const isActive = this.classList.contains('active');
+        
+        // Optional: Close all other FAQs
+        // document.querySelectorAll('.faq-question').forEach(q => {
+        //   if (q !== this && q.classList.contains('active')) {
+        //     q.classList.remove('active');
+        //     q.nextElementSibling.classList.remove('active');
+        //   }
+        // });
+        
+        // Toggle current
+        this.classList.toggle('active');
+        currentAnswer.classList.toggle('active');
+      });
+    });
+
+    // Category Filter functionality
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const categorySections = document.querySelectorAll('.faq-category-section');
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Update active button
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Show/hide categories
+        if (category === 'all') {
+          categorySections.forEach(section => section.style.display = 'block');
+        } else {
+          categorySections.forEach(section => {
+            if (section.getAttribute('data-category') === category) {
+              section.style.display = 'block';
+            } else {
+              section.style.display = 'none';
+            }
+          });
+        }
+      });
+    });
+
+    // Add active class to current page in nav
+    const currentLocation = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentLocation) {
+        link.classList.add('active');
+      }
+    });
+
+    // Form submission (prevent default)
+    document.getElementById('questionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your question! (Demo mode – in production this would be sent to our team)');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

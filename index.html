@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXA Advisory | premium financial services Nepal</title>
+  <!-- Fonts & Icons (same as original) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ----- EXACT ORIGINAL STYLES (preserved) with subtle refinements ----- */
+    :root {
+      --navy: #0B1C2D;
+      --navy-light: #132c45;
+      --navy-dark: #081421;
+      --navy-lighter: #1a3a5a;
+      --gold: #C9A14A;
+      --gold-light: #D4B56A;
+      --gold-dark: #B08C3A;
+      --gold-transparent: rgba(201, 161, 74, 0.1);
+      --card: #132c45;
+      --card-hover: #1a3a5a;
+      --line: #1f3b5a;
+      --text: #dcdcdc;
+      --text-light: #f0f0f0;
+      --success: #2ecc71;
+      --warning: #f39c12;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.5);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --border-radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background: var(--navy);
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+      font-weight: 400;
+    }
+
+    /* NAVBAR (exact) */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(11, 28, 45, 0.97);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 8%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(201, 161, 74, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      object-fit: contain;
+      border: 1px solid var(--gold);
+    }
+
+    .logo-text h2 {
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    .logo-text span {
+      color: white;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+      transition: var(--transition);
+    }
+
+    .nav-links a:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a:hover:before {
+      width: 100%;
+    }
+
+    .nav-contact {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-contact a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border: 1px solid var(--gold);
+      border-radius: 25px;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .nav-contact a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--gold);
+      transition: var(--transition);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 120px 10% 60px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0B1C2D 0%, #123a5c 50%, #0B1C2D 100%);
+      animation: gradientShift 15s ease infinite;
+      background-size: 400% 400%;
+      z-index: -1;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo-side {
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      background: var(--gold);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 50px rgba(201, 161, 74, 0.4);
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .hero-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      max-width: 650px;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(19, 44, 69, 0.7);
+      padding: 10px 18px;
+      border-radius: 50px;
+      border: 1px solid rgba(201, 161, 74, 0.3);
+      transition: var(--transition);
+    }
+
+    .hero-feature:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+
+    .hero-feature i {
+      color: var(--gold);
+      font-size: 13px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 2px solid var(--gold);
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(201, 161, 74, 0.4);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-small {
+      padding: 10px 24px;
+      font-size: 14px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* SECTION STYLES */
+    section {
+      padding: 70px 10%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 1.1rem;
+    }
+
+    /* SECTION SEPARATOR LINES */
+    .section-separator {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0;
+      opacity: 0.3;
+    }
+
+    /* CLIENTS SECTION */
+    .clients-section {
+      background: var(--navy-light);
+      padding: 60px 10%;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .client-card {
+      background: var(--card);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid var(--line);
+    }
+
+    .client-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .client-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .client-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .client-card p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .client-stats {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .client-stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    /* INDUSTRIES SECTION */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .industry-card {
+      background: var(--card);
+      border-radius: var(--border-radius);
+      padding: 30px;
+      transition: var(--transition);
+      border: 1px solid var(--line);
+    }
+
+    .industry-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .industry-icon {
+      width: 55px;
+      height: 55px;
+      background: var(--gold-transparent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    .industry-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .industry-card p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .industry-features {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .industry-features li {
+      padding: 6px 0;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .industry-features li i {
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    /* PROCESS SECTION */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      max-width: 800px;
+      margin: 40px auto 0;
+      position: relative;
+    }
+
+    .process-steps:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 25px;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      z-index: 0;
+    }
+
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      position: relative;
+      z-index: 1;
+      background: var(--card);
+      padding: 25px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--line);
+      transition: var(--transition);
+    }
+
+    .process-step:hover {
+      transform: translateX(8px);
+      border-color: var(--gold);
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .step-content p {
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    /* ABOUT SECTION */
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: var(--text);
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .about-highlight {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: var(--card);
+      border-radius: 10px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .about-highlight i {
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 25px 15px;
+      background: var(--card);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--line);
+      transition: var(--transition);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* SERVICES SECTION */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      border: 1px solid transparent;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-icon i {
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .service-card p {
+      color: var(--text);
+      margin-bottom: 12px;
+      flex-grow: 1;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .service-features li {
+      padding: 6px 0;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .service-features li i {
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .service-cta {
+      margin-top: 20px;
+    }
+
+    /* WHY CHOOSE US */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--line);
+      transition: var(--transition);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .why-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-8px);
+    }
+
+    .why-card i {
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .why-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .why-card p {
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* CONTACT FORM SECTION */
+    .contact-form-section {
+      background: var(--navy-light);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .contact-form-section h3 {
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 15px;
+      background: var(--navy);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: white;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(201, 161, 74, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(201, 161, 74, 0.3);
+    }
+
+    /* CONTACT INFORMATION */
+    .contact-info-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .contact-method {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px;
+      background: var(--card);
+      border-radius: 12px;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      min-height: 140px;
+    }
+
+    .contact-method:hover {
+      background: var(--card-hover);
+      transform: translateY(-3px);
+      border-color: var(--gold);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon i {
+      font-size: 20px;
+      color: var(--navy);
+    }
+
+    .contact-details h4 {
+      color: white;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .contact-details a, .contact-details p {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: block;
+      line-height: 1.4;
+      font-size: 0.9rem;
+    }
+
+    .contact-details a:hover {
+      color: var(--gold);
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .quick-action {
+      text-align: center;
+      padding: 20px;
+      background: var(--card);
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quick-action:hover {
+      background: var(--card-hover);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .quick-action i {
+      font-size: 28px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .quick-action h4 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .quick-action p {
+      color: var(--text);
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+    }
+
+    .quick-action small {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Business Hours */
+    .business-hours-box {
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      margin-top: 20px;
+      border-left: 4px solid var(--gold);
+      text-align: center;
+    }
+
+    .business-hours-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .business-hours-header h3 {
+      color: var(--gold);
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .current-date-display {
+      color: var(--gold);
+      font-size: 0.9rem;
+      background: rgba(201, 161, 74, 0.1);
+      padding: 5px 15px;
+      border-radius: 20px;
+      border: 1px solid rgba(201, 161, 74, 0.3);
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .hour-item {
+      padding: 15px;
+      background: var(--navy-light);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .hour-day {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .hour-time {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      margin-top: 60px;
+      padding: 40px;
+      background: var(--card);
+      border-radius: var(--border-radius);
+    }
+
+    .faq-section h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--navy-light);
+    }
+
+    .faq-question {
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .faq-question i {
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      background: var(--navy);
+    }
+
+    .faq-answer.active {
+      padding: 20px;
+      max-height: 1000px;
+    }
+
+    .faq-answer p {
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy-light));
+      text-align: center;
+      padding: 70px 10%;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 2.2rem;
+      color: white;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .cta-content h2 span {
+      color: var(--gold);
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* SOCIAL MEDIA PROFILES */
+    .social-media-section {
+      background: var(--navy-light);
+      padding: 50px 10%;
+      text-align: center;
+    }
+
+    .social-media-section h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-profiles {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .social-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 25px;
+      background: var(--card);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      text-decoration: none;
+      color: white;
+      width: 200px;
+    }
+
+    .social-profile:hover {
+      transform: translateY(-10px);
+      border: 1px solid var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .social-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+    }
+
+    .social-icon.facebook {
+      background: linear-gradient(135deg, #1877F2, #0D5FDB);
+    }
+
+    .social-icon.linkedin {
+      background: linear-gradient(135deg, #0077B5, #00669B);
+    }
+
+    .social-icon.instagram {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    }
+
+    .social-profile h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .social-profile p {
+      color: var(--text);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* CONTACT SQUARES */
+    .contact-squares {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .contact-square {
+      width: 60px;
+      height: 60px;
+      background: var(--card);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 24px;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .contact-square:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-dark);
+      padding: 50px 10% 20px;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h4 {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+      transform: translateX(5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--gold);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 18px;
+    }
+
+    .footer-social a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+
+    .footer-legal {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .footer-legal a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 12px;
+    }
+
+    .footer-legal a:hover {
+      color: var(--gold);
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 100;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--gold-light);
+    }
+
+    /* RESPONSIVE (unchanged) */
+    @media (max-width: 1200px) {
+      .hero h1 { font-size: 2.8rem; }
+      .hero-logo-side { width: 180px; height: 180px; }
+      .hours-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 1024px) {
+      section { padding: 60px 5%; }
+      .hero { padding: 100px 5% 50px; }
+      .hero-logo-side { width: 160px; height: 160px; right: 5%; }
+      .contact-info-section, .form-grid { grid-template-columns: 1fr; gap: 25px; }
+    }
+    @media (max-width: 768px) {
+      .mobile-menu { display: block; }
+      .nav-links {
+        position: fixed; top: 70px; left: 0; width: 100%; background: var(--navy);
+        flex-direction: column; padding: 20px; gap: 15px; display: none; border-bottom: 1px solid var(--line);
+      }
+      .nav-links.active { display: flex; }
+      .nav-contact { display: none; }
+      .hero { padding: 100px 5% 40px; text-align: center; }
+      .hero-logo-side { position: relative; top: auto; right: auto; transform: none; margin: 0 auto 30px; width: 120px; height: 120px; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-features { justify-content: center; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .about-content { grid-template-columns: 1fr; }
+      .contact-methods, .quick-actions { grid-template-columns: 1fr; }
+      .hours-grid { grid-template-columns: 1fr; }
+      .process-steps:before { left: 20px; }
+      .faq-section { padding: 30px 20px; }
+      .social-profiles { flex-direction: column; align-items: center; }
+      .social-profile { width: 100%; max-width: 300px; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 50px 5%; }
+      .hero h1 { font-size: 1.8rem; }
+      .section-header h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Back to Top -->
+  <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- NAVIGATION (exact same structure) -->
+  <nav id="navbar">
+    <a href="#home" class="logo">
+      <img src="https://i.ibb.co/ksSqQwHs/NEXA-3.png" alt="NEXA Advisory & Consulting Logo" class="logo-img">
+      <div class="logo-text"><h2>NEXA</h2><span>ADVISORY & CONSULTING</span></div>
+    </a>
+    <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+      <a href="#industries">Industries</a><a href="#process">Process</a><a href="#why">Why Us</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-contact"><a href="tel:+9779768553322"><i class="fas fa-phone"></i>+977-976-8553322</a></div>
+  </nav>
+
+  <!-- HERO SECTION (polished copy) -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-logo-side"><img src="https://i.ibb.co/k2HKwyys/LOGO.png" alt="NEXA Logo" class="hero-logo-img"></div>
+    <div class="hero-content">
+      <h1>Nepal’s trusted financial architects</h1>
+      <p class="hero-subtitle">Accounting · taxation · compliance · virtual CFO</p>
+      <p class="hero-description">We build financial clarity for startups, SMEs, and enterprises. NEXA combines global expertise with local insight.</p>
+      <div class="hero-features">
+        <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>100+ clients</span></div>
+        <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>100% compliance</span></div>
+        <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>CA/CPA led team</span></div>
+        <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>₹50Cr+ assets</span></div>
+      </div>
+      <div class="hero-buttons">
+        <a href="https://forms.gle/1KZhArSr7fmGApJM9" class="btn" target="_blank"><i class="fas fa-paper-plane"></i> Free consultation</a>
+        <a href="tel:+9779768553322" class="btn btn-secondary"><i class="fas fa-phone"></i> Call now</a>
+        <a href="#services" class="btn btn-secondary"><i class="fas fa-briefcase"></i> Explore</a>
+      </div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- CLIENTS (who we serve) -->
+  <section class="clients-section" id="clients">
+    <div class="section-header"><h2><i class="fas fa-user-tie"></i> Who we serve</h2><p>Tailored financial solutions for every stage</p></div>
+    <div class="clients-grid">
+      <div class="client-card"><div class="client-icon"><i class="fas fa-rocket"></i></div><h3>Startups</h3><p>From registration to investor-ready financials.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">50+</span><span class="stat-label">startups</span></div></div></div>
+      <div class="client-card"><div class="client-icon"><i class="fas fa-store"></i></div><h3>SMEs</h3><p>Scale with clean books & tax efficiency.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">80+</span><span class="stat-label">SMEs</span></div></div></div>
+      <div class="client-card"><div class="client-icon"><i class="fas fa-user-md"></i></div><h3>Professionals</h3><p>Tax planning & compliance for doctors, lawyers.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">40+</span><span class="stat-label">pros</span></div></div></div>
+      <div class="client-card"><div class="client-icon"><i class="fas fa-building"></i></div><h3>Enterprises</h3><p>Strategic CFO support & complex consolidation.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">20+</span><span class="stat-label">firms</span></div></div></div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- INDUSTRIES (with more button) -->
+  <section id="industries">
+    <div class="section-header"><h2><i class="fas fa-industry"></i> Industries we serve</h2><p>Deep domain expertise across Nepal’s economy</p></div>
+    <div class="industries-grid">
+      <div class="industry-card"><div class="industry-icon"><i class="fas fa-industry"></i></div><h3>Manufacturing</h3><p>Factory costing, inventory, export/import.</p><ul class="industry-features"><li><i class="fas fa-check"></i> production accounting</li><li><i class="fas fa-check"></i> raw material controls</li></ul></div>
+      <div class="industry-card"><div class="industry-icon"><i class="fas fa-concierge-bell"></i></div><h3>Service sector</h3><p>Project accounting, professional fee structuring.</p><ul class="industry-features"><li><i class="fas fa-check"></i> time & expense</li><li><i class="fas fa-check"></i> service tax</li></ul></div>
+      <div class="industry-card"><div class="industry-icon"><i class="fas fa-hotel"></i></div><h3>Tourism & hospitality</h3><p>hotels, trekking, tour operators, restaurants.</p><ul class="industry-features"><li><i class="fas fa-check"></i> seasonal cashflow</li><li><i class="fas fa-check"></i> tourism tax</li></ul></div>
+      <div class="industry-card"><div class="industry-icon"><i class="fas fa-laptop-code"></i></div><h3>IT & technology</h3><p>revenue recognition, R&D credits.</p><ul class="industry-features"><li><i class="fas fa-check"></i> project costing</li><li><i class="fas fa-check"></i> software revenue</li></ul></div>
+    </div>
+    <div style="text-align:center; margin-top:30px;"><a href="#contact" class="btn btn-outline"><i class="fas fa-arrow-right"></i> More industries (real estate, retail…)</a></div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="section-header"><h2><i class="fas fa-cogs"></i> Our working process</h2><p>Clarity at every step</p></div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-number">01</div><div class="step-content"><h3>Discovery & consultation</h3><p>We dissect your business model and financial goals.</p></div></div>
+      <div class="process-step"><div class="step-number">02</div><div class="step-content"><h3>Strategic planning</h3><p>A customized roadmap with clear KPIs.</p></div></div>
+      <div class="process-step"><div class="step-number">03</div><div class="step-content"><h3>Implementation</h3><p>Experts execute – from accounting setup to tax filing.</p></div></div>
+      <div class="process-step"><div class="step-number">04</div><div class="step-content"><h3>Ongoing support</h3><p>Quarterly reviews and 24/7 availability.</p></div></div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- ABOUT (crisp) -->
+  <section id="about">
+    <div class="section-header"><h2><i class="fas fa-building"></i> About NEXA</h2><p>Local roots, global standards</p></div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>NEXA was founded by seasoned CAs and CPAs to bridge the gap between Nepali businesses and world‑class financial management. We don’t just file returns – we build financial health.</p>
+        <div class="about-highlights">
+          <div class="about-highlight"><i class="fas fa-check-circle"></i><span>Quality service</span></div>
+          <div class="about-highlight"><i class="fas fa-check-circle"></i><span>Experienced team</span></div>
+          <div class="about-highlight"><i class="fas fa-check-circle"></i><span>Data security</span></div>
+          <div class="about-highlight"><i class="fas fa-check-circle"></i><span>100% confidentiality</span></div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">clients</span></div>
+        <div class="stat-item"><span class="stat-number">98%</span><span class="stat-label">retention</span></div>
+        <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">years exp</span></div>
+        <div class="stat-item"><span class="stat-number">₹50Cr+</span><span class="stat-label">assets</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- SERVICES (with more button) -->
+  <section id="services">
+    <div class="section-header"><h2><i class="fas fa-briefcase"></i> Our services</h2><p>Comprehensive, scalable, transparent</p></div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon"><i class="fas fa-book"></i></div><h3>Accounting & bookkeeping</h3><p>Monthly books, financials, Tally, reconciliations.</p><ul class="service-features"><li><i class="fas fa-check"></i> MIS reports</li><li><i class="fas fa-check"></i> bank rec.</li></ul><div class="service-cta"><a href="https://forms.gle/1KZhArSr7fmGApJM9" class="btn btn-small">Inquire</a></div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-file-invoice"></i></div><h3>Tax filing & compliance</h3><p>VAT, income tax, TDS, annual returns, notices.</p><ul class="service-features"><li><i class="fas fa-check"></i> planning</li><li><i class="fas fa-check"></i> filing</li></ul><div class="service-cta"><a href="https://forms.gle/1KZhArSr7fmGApJM9" class="btn btn-small">Inquire</a></div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-building-columns"></i></div><h3>Company registration</h3><p>Pvt Ltd, partnership, PAN/VAT, MOA/AOA.</p><ul class="service-features"><li><i class="fas fa-check"></i> name reservation</li><li><i class="fas fa-check"></i> post‑compliance</li></ul><div class="service-cta"><a href="https://forms.gle/1KZhArSr7fmGApJM9" class="btn btn-small">Inquire</a></div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Financial advisory</h3><p>Budgeting, forecasting, investment analysis.</p><ul class="service-features"><li><i class="fas fa-check"></i> cash flow</li><li><i class="fas fa-check"></i> performance</li></ul><div class="service-cta"><a href="https://forms.gle/1KZhArSr7fmGApJM9" class="btn btn-small">Inquire</a></div></div>
+    </div>
+    <div style="text-align:center; margin-top:30px;"><a href="#contact" class="btn btn-outline"><i class="fas fa-arrow-right"></i> More services (virtual CFO, training)</a></div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="section-header"><h2><i class="fas fa-star"></i> Why choose NEXA?</h2><p>The NEXA difference</p></div>
+    <div class="why-grid">
+      <div class="why-card"><i class="fas fa-shield-alt"></i><h3>Expertise</h3><p>CA/CPA led, 10+ years average experience.</p></div>
+      <div class="why-card"><i class="fas fa-clock"></i><h3>Timely delivery</h3><p>We never miss a deadline – guaranteed.</p></div>
+      <div class="why-card"><i class="fas fa-handshake"></i><h3>Partnership approach</h3><p>We work as your on‑demand finance team.</p></div>
+      <div class="why-card"><i class="fas fa-rupee-sign"></i><h3>Transparent pricing</h3><p>Fixed fees, no surprises, flexible terms.</p></div>
+      <div class="why-card"><i class="fas fa-headset"></i><h3>24/7 support</h3><p>WhatsApp, calls, emails – we’re there.</p></div>
+      <div class="why-card"><i class="fas fa-chart-pie"></i><h3>Strategic insights</h3><p>Actionable dashboards, not just numbers.</p></div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- SOCIAL MEDIA (condensed) -->
+  <section class="social-media-section" id="social">
+    <div class="section-header"><h2><i class="fas fa-share-alt"></i> Connect with NEXA</h2><p>Insights, updates, and more</p></div>
+    <div class="social-profiles">
+      <a href="#" class="social-profile"><div class="social-icon facebook"><i class="fab fa-facebook-f"></i></div><h3>Facebook</h3><p>daily tips</p></a>
+      <a href="#" class="social-profile"><div class="social-icon instagram"><i class="fab fa-instagram"></i></div><h3>Instagram</h3><p>behind the scenes</p></a>
+      <a href="#" class="social-profile"><div class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></div><h3>LinkedIn</h3><p>industry news</p></a>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to <span>elevate</span> your finances?</h2>
+      <p>Join 100+ businesses that trust NEXA. Get your free, no‑obligation consultation today.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn"><i class="fas fa-calendar-check"></i> Free consultation</a>
+        <a href="tel:+9779768553322" class="btn btn-secondary"><i class="fas fa-phone"></i> Call now</a>
+      </div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- CONTACT SECTION (full original layout) -->
+  <section id="contact">
+    <div class="section-header"><h2><i class="fas fa-phone-alt"></i> Contact us</h2><p>We respond within 2 hours</p></div>
+    <div class="contact-form-section">
+      <h3><i class="fas fa-paper-plane"></i> Send a message</h3>
+      <form id="contactForm" action="https://formspree.io/f/mpqqpjwa" method="POST">
+        <div class="form-grid">
+          <div class="form-group"><label for="name">Full name *</label><input type="text" id="name" name="name" required placeholder="Your name"></div>
+          <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required placeholder="you@example.com"></div>
+          <div class="form-group"><label for="phone">Phone *</label><input type="tel" id="phone" name="phone" required placeholder="+977 98XXXXXXXX"></div>
+          <div class="form-group"><label for="company">Company</label><input type="text" id="company" name="company" placeholder="Optional"></div>
+          <div class="form-group full-width"><label for="message">Message *</label><textarea id="message" name="message" required placeholder="How can we help?"></textarea></div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send message</button>
+        </div>
+      </form>
+    </div>
+    <div class="business-hours-box">
+      <div class="business-hours-header"><i class="fas fa-clock"></i><h3>Business hours</h3></div>
+      <div class="current-date-display" id="currentDateDisplay"></div>
+      <div class="hours-grid">
+        <div class="hour-item"><div class="hour-day">Sun - Fri</div><div class="hour-time">9am - 6pm</div></div>
+        <div class="hour-item"><div class="hour-day">Saturday</div><div class="hour-time">10am - 4pm</div></div>
+        <div class="hour-item"><div class="hour-day">Holidays</div><div class="hour-time">appointment</div></div>
+        <div class="hour-item"><div class="hour-day">Emergency</div><div class="hour-time">24/7 WhatsApp</div></div>
+      </div>
+    </div>
+    <div class="contact-info-section">
+      <div class="contact-methods">
+        <div class="contact-method"><div class="contact-icon"><i class="fas fa-phone"></i></div><div class="contact-details"><h4>Call</h4><a href="tel:+9779768553322">+977-976-8553322</a></div></div>
+        <div class="contact-method"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-details"><h4>Email</h4><a href="mailto:nexaadvisoryconsulting@gmail.com">nexaadvisoryconsulting</a></div></div>
+        <div class="contact-method"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-details"><h4>WhatsApp</h4><a href="https://wa.me/9779768553322">+977-976-8553322</a></div></div>
+        <div class="contact-method"><div class="contact-icon"><i class="fab fa-telegram"></i></div><div class="contact-details"><h4>Telegram</h4><a href="https://t.me/9768553322">+977-976-8553322</a></div></div>
+      </div>
+      <div class="quick-actions">
+        <a href="https://wa.me/9779768553322" class="quick-action"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><p>fastest reply</p><small>instant</small></a>
+        <a href="tel:+9779768553322" class="quick-action"><i class="fas fa-phone"></i><h4>Call</h4><p>direct conversation</p><small>now</small></a>
+        <a href="mailto:nexaadvisoryconsulting@gmail.com" class="quick-action"><i class="fas fa-envelope"></i><h4>Email</h4><p>detailed</p><small>documents</small></a>
+        <a href="viber://chat?number=+9779768553322" class="quick-action"><i class="fab fa-viber"></i><h4>Viber</h4><p>secure</p><small>encrypted</small></a>
+      </div>
+    </div>
+  </section>
+  <div class="section-separator"></div>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <h2><i class="fas fa-question-circle"></i> Frequently asked questions</h2>
+    <div class="faq-container">
+      <div class="faq-item"><div class="faq-question"><span>What services does NEXA offer?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Accounting, tax filing (VAT/income tax), company registration, financial advisory, and virtual CFO services.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>Who can work with NEXA?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Startups, SMEs, professionals, and established enterprises across all industries.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>How do you charge?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Fixed monthly retainer or project‑based – always transparent, no hidden fees.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>How do I get started?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Simply fill the contact form or call us. We’ll schedule a free discovery call.</p></div></div>
+    </div>
+  </section>
+
+  <!-- Contact squares -->
+  <div class="contact-squares">
+    <a href="tel:+9779768553322" class="contact-square"><i class="fas fa-phone"></i></a>
+    <a href="https://wa.me/9779768553322" class="contact-square"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://t.me/9768553322" class="contact-square"><i class="fab fa-telegram"></i></a>
+    <a href="viber://chat?number=+9779768553322" class="contact-square"><i class="fab fa-viber"></i></a>
+    <a href="mailto:nexaadvisoryconsulting@gmail.com" class="contact-square"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <!-- FOOTER (exact) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column"><h4>NEXA Advisory</h4><p>Your partner for financial excellence in Nepal.</p></div>
+      <div class="footer-column"><h4>Quick links</h4><ul class="footer-links"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="footer-column"><h4>Services</h4><ul class="footer-links"><li><a href="#">Accounting</a></li><li><a href="#">Tax</a></li><li><a href="#">Registration</a></li><li><a href="#">Advisory</a></li></ul></div>
+      <div class="footer-column"><h4>Connect</h4><ul class="footer-links"><li><a href="tel:+9779768553322"><i class="fas fa-phone"></i> Call</a></li><li><a href="mailto:nexaadvisoryconsulting@gmail.com"><i class="fas fa-envelope"></i> Email</a></li></ul></div>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-bottom"><p>© 2026 NEXA Advisory & Consulting. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+  </footer>
+
+  <script>
+    // date display
+    function updateCurrentDate() {
+      const el = document.getElementById('currentDateDisplay');
+      if(el) el.textContent = new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+    }
+    document.addEventListener('DOMContentLoaded', updateCurrentDate);
+
+    // mobile menu
+    document.querySelector('.mobile-menu').addEventListener('click', function(){
+      document.querySelector('.nav-links').classList.toggle('active');
+      this.querySelector('i').classList.toggle('fa-bars');
+      this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // smooth scroll
+    document.querySelectorAll('.nav-links a, .logo').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href && href.startsWith('#')){
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if(target) window.scrollTo({top: target.offsetTop-80, behavior:'smooth'});
+          document.querySelector('.nav-links')?.classList.remove('active');
+          document.querySelector('.mobile-menu i')?.classList.add('fa-bars');
+          document.querySelector('.mobile-menu i')?.classList.remove('fa-times');
+        }
+      });
+    });
+
+    // back to top
+    window.addEventListener('scroll', ()=>{
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY>500);
+    });
+
+    // FAQ
+    document.querySelectorAll('.faq-question').forEach(q=>{
+      q.addEventListener('click', function(){
+        this.classList.toggle('active');
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
+
+    // form demo (prevent actual submit)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thank you! (demo mode – your message would be sent)');
+    });
+  </script>
+</body>
+</html>

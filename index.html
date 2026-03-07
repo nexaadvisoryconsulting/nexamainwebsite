@@ -112,6 +112,19 @@
       position: relative;
       padding: 5px 0;
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a i {
+      color: var(--gold);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover i {
+      transform: scale(1.1);
     }
 
     .nav-links a:before {
@@ -851,7 +864,7 @@
       box-shadow: 0 10px 20px rgba(201, 161, 74, 0.3);
     }
 
-    /* CONTACT INFORMATION */
+    /* CONTACT INFORMATION - REDESIGNED with separate hours box */
     .contact-info-section {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -968,64 +981,103 @@
       font-weight: 600;
     }
 
-    /* Business Hours */
-    .business-hours-box {
-      background: var(--card);
-      padding: 30px;
+    /* NEW: Business Hours Box - separate and prominent */
+    .business-hours-box-new {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy-lighter));
       border-radius: var(--border-radius);
-      margin-top: 20px;
-      border-left: 4px solid var(--gold);
-      text-align: center;
+      padding: 30px;
+      margin: 30px 0;
+      border: 2px solid var(--gold);
+      box-shadow: var(--shadow-heavy);
+      position: relative;
+      overflow: hidden;
     }
 
-    .business-hours-header {
+    .business-hours-box-new:before {
+      content: '\f017';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      font-size: 80px;
+      opacity: 0.1;
+      color: var(--gold);
+    }
+
+    .business-hours-header-new {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      gap: 15px;
       margin-bottom: 25px;
     }
 
-    .business-hours-header h3 {
+    .business-hours-header-new i {
+      font-size: 2.5rem;
       color: var(--gold);
-      margin: 0;
-      font-size: 1.3rem;
     }
 
-    .current-date-display {
+    .business-hours-header-new h3 {
       color: var(--gold);
-      font-size: 0.9rem;
-      background: rgba(201, 161, 74, 0.1);
-      padding: 5px 15px;
-      border-radius: 20px;
-      border: 1px solid rgba(201, 161, 74, 0.3);
-      margin-top: 10px;
+      font-size: 1.8rem;
+    }
+
+    .current-date-display-new {
+      color: var(--gold-light);
+      font-size: 1rem;
+      background: rgba(201, 161, 74, 0.15);
+      padding: 8px 20px;
+      border-radius: 40px;
+      border: 1px solid var(--gold);
       display: inline-block;
+      margin-bottom: 25px;
     }
 
-    .hours-grid {
+    .hours-grid-new {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
     }
 
-    .hour-item {
+    .hour-item-new {
       padding: 15px;
-      background: var(--navy-light);
+      background: var(--card);
       border-radius: 12px;
       text-align: center;
+      border: 1px solid var(--line);
+      transition: var(--transition);
     }
 
-    .hour-day {
+    .hour-item-new:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .hour-day-new {
       color: var(--gold);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       margin-bottom: 5px;
     }
 
-    .hour-time {
+    .hour-time-new {
       color: var(--text-light);
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .emergency-note {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(201, 161, 74, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      color: var(--gold);
+      font-weight: 500;
+      border: 1px dashed var(--gold);
+    }
+
+    .emergency-note i {
+      margin-right: 8px;
     }
 
     /* FAQ SECTION */
@@ -1380,11 +1432,11 @@
       background: var(--gold-light);
     }
 
-    /* RESPONSIVE (unchanged) */
+    /* RESPONSIVE */
     @media (max-width: 1200px) {
       .hero h1 { font-size: 2.8rem; }
       .hero-logo-side { width: 180px; height: 180px; }
-      .hours-grid { grid-template-columns: repeat(2, 1fr); }
+      .hours-grid-new { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 1024px) {
       section { padding: 60px 5%; }
@@ -1408,7 +1460,7 @@
       .btn { width: 100%; max-width: 280px; justify-content: center; }
       .about-content { grid-template-columns: 1fr; }
       .contact-methods, .quick-actions { grid-template-columns: 1fr; }
-      .hours-grid { grid-template-columns: 1fr; }
+      .hours-grid-new { grid-template-columns: 1fr; }
       .process-steps:before { left: 20px; }
       .faq-section { padding: 30px 20px; }
       .social-profiles { flex-direction: column; align-items: center; }
@@ -1425,7 +1477,7 @@
   <!-- Back to Top -->
   <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-  <!-- NAVIGATION (exact same structure) -->
+  <!-- NAVIGATION with symbol icons on each link -->
   <nav id="navbar">
     <a href="#home" class="logo">
       <img src="https://i.ibb.co/ksSqQwHs/NEXA-3.png" alt="NEXA Advisory & Consulting Logo" class="logo-img">
@@ -1433,29 +1485,29 @@
     </a>
     <div class="mobile-menu"><i class="fas fa-bars"></i></div>
     <div class="nav-links">
-      <a href="home">Home</a>
-      <a href="about">About</a>
-      <a href="our-services">Services</a>
-      <a href="industries">Industries</a>
-      <a href="process">Process</a>
-      <a href="why-us">Why Us</a>
-      <a href="contact">Contact</a>
+      <a href="#home"><i class="fas fa-home"></i> Home</a>
+      <a href="#about"><i class="fas fa-building"></i> About</a>
+      <a href="#services"><i class="fas fa-briefcase"></i> Services</a>
+      <a href="#industries"><i class="fas fa-industry"></i> Industries</a>
+      <a href="#process"><i class="fas fa-cogs"></i> Process</a>
+      <a href="#why"><i class="fas fa-star"></i> Why Us</a>
+      <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
     </div>
     <div class="nav-contact"><a href="tel:+9779768553322"><i class="fas fa-phone"></i>+977-976-8553322</a></div>
   </nav>
 
-  <!-- HERO SECTION (polished copy) -->
+  <!-- HERO SECTION (polished copy - removed all CA/CPA/audit references) -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
     <div class="hero-logo-side"><img src="https://i.ibb.co/k2HKwyys/LOGO.png" alt="NEXA Logo" class="hero-logo-img"></div>
     <div class="hero-content">
-      <h1>Nepal’s trusted financial architects</h1>
+      <h1>Nepal's trusted financial architects</h1>
       <p class="hero-subtitle">Accounting · taxation · compliance · virtual CFO</p>
       <p class="hero-description">We build financial clarity for startups, SMEs, and enterprises. NEXA combines global expertise with local insight.</p>
       <div class="hero-features">
         <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>100+ clients</span></div>
         <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>100% compliance</span></div>
-        <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>CA/CPA led team</span></div>
+        <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>Experienced team</span></div>
         <div class="hero-feature"><i class="fas fa-check-circle"></i> <span>₹50Cr+ assets</span></div>
       </div>
       <div class="hero-buttons">
@@ -1474,19 +1526,19 @@
       <div class="client-card"><div class="client-icon"><i class="fas fa-rocket"></i></div><h3>Startups</h3><p>From registration to investor-ready financials.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">50+</span><span class="stat-label">startups</span></div></div></div>
       <div class="client-card"><div class="client-icon"><i class="fas fa-store"></i></div><h3>SMEs</h3><p>Scale with clean books & tax efficiency.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">80+</span><span class="stat-label">SMEs</span></div></div></div>
       <div class="client-card"><div class="client-icon"><i class="fas fa-user-md"></i></div><h3>Professionals</h3><p>Tax planning & compliance for doctors, lawyers.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">40+</span><span class="stat-label">pros</span></div></div></div>
-      <div class="client-card"><div class="client-icon"><i class="fas fa-building"></i></div><h3>Enterprises</h3><p>Strategic CFO support & complex consolidation.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">20+</span><span class="stat-label">firms</span></div></div></div>
+      <div class="client-card"><div class="client-icon"><i class="fas fa-building"></i></div><h3>Enterprises</h3><p>Strategic financial support & consolidation.</p><div class="client-stats"><div class="client-stat"><span class="stat-value">20+</span><span class="stat-label">firms</span></div></div></div>
     </div>
   </section>
   <div class="section-separator"></div>
 
   <!-- INDUSTRIES (with more button) -->
   <section id="industries">
-    <div class="section-header"><h2><i class="fas fa-industry"></i> Industries we serve</h2><p>Deep domain expertise across Nepal’s economy</p></div>
+    <div class="section-header"><h2><i class="fas fa-industry"></i> Industries we serve</h2><p>Deep domain expertise across Nepal's economy</p></div>
     <div class="industries-grid">
       <div class="industry-card"><div class="industry-icon"><i class="fas fa-industry"></i></div><h3>Manufacturing</h3><p>Factory costing, inventory, export/import.</p><ul class="industry-features"><li><i class="fas fa-check"></i> production accounting</li><li><i class="fas fa-check"></i> raw material controls</li></ul></div>
       <div class="industry-card"><div class="industry-icon"><i class="fas fa-concierge-bell"></i></div><h3>Service sector</h3><p>Project accounting, professional fee structuring.</p><ul class="industry-features"><li><i class="fas fa-check"></i> time & expense</li><li><i class="fas fa-check"></i> service tax</li></ul></div>
       <div class="industry-card"><div class="industry-icon"><i class="fas fa-hotel"></i></div><h3>Tourism & hospitality</h3><p>hotels, trekking, tour operators, restaurants.</p><ul class="industry-features"><li><i class="fas fa-check"></i> seasonal cashflow</li><li><i class="fas fa-check"></i> tourism tax</li></ul></div>
-      <div class="industry-card"><div class="industry-icon"><i class="fas fa-laptop-code"></i></div><h3>IT & technology</h3><p>revenue recognition, R&D credits.</p><ul class="industry-features"><li><i class="fas fa-check"></i> project costing</li><li><i class="fas fa-check"></i> software revenue</li></ul></div>
+      <div class="industry-card"><div class="industry-icon"><i class="fas fa-laptop-code"></i></div><h3>IT & technology</h3><p>revenue recognition, project costing.</p><ul class="industry-features"><li><i class="fas fa-check"></i> project costing</li><li><i class="fas fa-check"></i> software revenue</li></ul></div>
     </div>
     <div style="text-align:center; margin-top:30px;"><a href="#contact" class="btn btn-outline"><i class="fas fa-arrow-right"></i> More industries (real estate, retail…)</a></div>
   </section>
@@ -1504,12 +1556,12 @@
   </section>
   <div class="section-separator"></div>
 
-  <!-- ABOUT (crisp) -->
+  <!-- ABOUT (crisp - removed all CA references) -->
   <section id="about">
     <div class="section-header"><h2><i class="fas fa-building"></i> About NEXA</h2><p>Local roots, global standards</p></div>
     <div class="about-content">
       <div class="about-text">
-        <p>NEXA was founded by seasoned CAs and CPAs to bridge the gap between Nepali businesses and world‑class financial management. We don’t just file returns – we build financial health.</p>
+        <p>NEXA was founded by seasoned financial professionals to bridge the gap between Nepali businesses and world‑class financial management. We don't just file returns – we build financial health.</p>
         <div class="about-highlights">
           <div class="about-highlight"><i class="fas fa-check-circle"></i><span>Quality service</span></div>
           <div class="about-highlight"><i class="fas fa-check-circle"></i><span>Experienced team</span></div>
@@ -1544,11 +1596,11 @@
   <section id="why">
     <div class="section-header"><h2><i class="fas fa-star"></i> Why choose NEXA?</h2><p>The NEXA difference</p></div>
     <div class="why-grid">
-      <div class="why-card"><i class="fas fa-shield-alt"></i><h3>Expertise</h3><p>CA/CPA led, 10+ years average experience.</p></div>
+      <div class="why-card"><i class="fas fa-shield-alt"></i><h3>Expertise</h3><p>Qualified professionals with 10+ years average experience.</p></div>
       <div class="why-card"><i class="fas fa-clock"></i><h3>Timely delivery</h3><p>We never miss a deadline – guaranteed.</p></div>
       <div class="why-card"><i class="fas fa-handshake"></i><h3>Partnership approach</h3><p>We work as your on‑demand finance team.</p></div>
       <div class="why-card"><i class="fas fa-rupee-sign"></i><h3>Transparent pricing</h3><p>Fixed fees, no surprises, flexible terms.</p></div>
-      <div class="why-card"><i class="fas fa-headset"></i><h3>24/7 support</h3><p>WhatsApp, calls, emails – we’re there.</p></div>
+      <div class="why-card"><i class="fas fa-headset"></i><h3>24/7 support</h3><p>WhatsApp, calls, emails – we're there.</p></div>
       <div class="why-card"><i class="fas fa-chart-pie"></i><h3>Strategic insights</h3><p>Actionable dashboards, not just numbers.</p></div>
     </div>
   </section>
@@ -1578,9 +1630,11 @@
   </section>
   <div class="section-separator"></div>
 
-  <!-- CONTACT SECTION (full original layout) -->
+  <!-- CONTACT SECTION with separate business hours box -->
   <section id="contact">
     <div class="section-header"><h2><i class="fas fa-phone-alt"></i> Contact us</h2><p>We respond within 2 hours</p></div>
+    
+    <!-- Contact Form -->
     <div class="contact-form-section">
       <h3><i class="fas fa-paper-plane"></i> Send a message</h3>
       <form id="contactForm" action="https://formspree.io/f/mpqqpjwa" method="POST">
@@ -1594,16 +1648,38 @@
         </div>
       </form>
     </div>
-    <div class="business-hours-box">
-      <div class="business-hours-header"><i class="fas fa-clock"></i><h3>Business hours</h3></div>
-      <div class="current-date-display" id="currentDateDisplay"></div>
-      <div class="hours-grid">
-        <div class="hour-item"><div class="hour-day">Sun - Fri</div><div class="hour-time">9am - 6pm</div></div>
-        <div class="hour-item"><div class="hour-day">Saturday</div><div class="hour-time">10am - 4pm</div></div>
-        <div class="hour-item"><div class="hour-day">Holidays</div><div class="hour-time">appointment</div></div>
-        <div class="hour-item"><div class="hour-day">Emergency</div><div class="hour-time">24/7 WhatsApp</div></div>
+
+    <!-- NEW: Separate Business Hours Box (prominent) -->
+    <div class="business-hours-box-new">
+      <div class="business-hours-header-new">
+        <i class="fas fa-clock"></i>
+        <h3>Business Hours</h3>
+      </div>
+      <div class="current-date-display-new" id="currentDateDisplay"></div>
+      <div class="hours-grid-new">
+        <div class="hour-item-new">
+          <div class="hour-day-new">Sunday - Friday</div>
+          <div class="hour-time-new">9:00 AM - 6:00 PM</div>
+        </div>
+        <div class="hour-item-new">
+          <div class="hour-day-new">Saturday</div>
+          <div class="hour-time-new">10:00 AM - 4:00 PM</div>
+        </div>
+        <div class="hour-item-new">
+          <div class="hour-day-new">Public Holidays</div>
+          <div class="hour-time-new">Appointment Basis</div>
+        </div>
+        <div class="hour-item-new">
+          <div class="hour-day-new">Emergency Support</div>
+          <div class="hour-time-new">24/7 via WhatsApp</div>
+        </div>
+      </div>
+      <div class="emergency-note">
+        <i class="fas fa-exclamation-triangle"></i> For urgent matters outside business hours, contact us on WhatsApp or Telegram
       </div>
     </div>
+
+    <!-- Contact Information (email, phone, etc.) -->
     <div class="contact-info-section">
       <div class="contact-methods">
         <div class="contact-method"><div class="contact-icon"><i class="fas fa-phone"></i></div><div class="contact-details"><h4>Call</h4><a href="tel:+9779768553322">+977-976-8553322</a></div></div>
@@ -1628,7 +1704,7 @@
       <div class="faq-item"><div class="faq-question"><span>What services does NEXA offer?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Accounting, tax filing (VAT/income tax), company registration, financial advisory, and virtual CFO services.</p></div></div>
       <div class="faq-item"><div class="faq-question"><span>Who can work with NEXA?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Startups, SMEs, professionals, and established enterprises across all industries.</p></div></div>
       <div class="faq-item"><div class="faq-question"><span>How do you charge?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Fixed monthly retainer or project‑based – always transparent, no hidden fees.</p></div></div>
-      <div class="faq-item"><div class="faq-question"><span>How do I get started?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Simply fill the contact form or call us. We’ll schedule a free discovery call.</p></div></div>
+      <div class="faq-item"><div class="faq-question"><span>How do I get started?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Simply fill the contact form or call us. We'll schedule a free discovery call.</p></div></div>
     </div>
   </section>
 
